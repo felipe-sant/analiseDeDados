@@ -1,5 +1,13 @@
 [
     {
+        "label": "Temperatura",
+        "importPath": "model.Temperatura",
+        "description": "model.Temperatura",
+        "isExtraImport": true,
+        "detail": "model.Temperatura",
+        "documentation": {}
+    },
+    {
         "label": "readFile",
         "importPath": "function.readFile",
         "description": "function.readFile",
@@ -12,16 +20,25 @@
         "kind": 2,
         "importPath": "function.readFile",
         "description": "function.readFile",
-        "peekOfCode": "def readFile(file_path):\n    dados = []\n    with open(file_path, 'r') as file:\n        arquivo = file.read().split(\"\\n\")\n        for linha in arquivo[1:-2]:\n            dado = linha.split(\";\")\n            dado = dado[0:-1]\n            dados.append(dado)\n    return dados",
+        "peekOfCode": "def readFile(file_path) -> list:\n    dados = []\n    with open(file_path, 'r') as file:\n        arquivo = file.read().split(\"\\n\")\n        for linha in arquivo[1:-2]:\n            dado = linha.split(\";\")\n            obj = Temperatura(dado[0], dado[1])\n            dados.append(obj)\n    return dados",
         "detail": "function.readFile",
         "documentation": {}
     },
     {
-        "label": "arquivo",
+        "label": "Temperatura",
+        "kind": 6,
+        "importPath": "model.Temperatura",
+        "description": "model.Temperatura",
+        "peekOfCode": "class Temperatura:\n    def __init__(self, data, temperatura):\n        self.data = data\n        self.temperatura = temperatura\n    def __str__(self):\n        return f\"Data: {self.data}, Temperatura: {self.temperatura}\"",
+        "detail": "model.Temperatura",
+        "documentation": {}
+    },
+    {
+        "label": "arquivos",
         "kind": 5,
         "importPath": "index",
         "description": "index",
-        "peekOfCode": "arquivo = readFile('data/dados_A618_D_2022-10-01_2023-12-31.csv')\nprint(arquivo)",
+        "peekOfCode": "arquivos = readFile(\"data/dados_A618_D_2022-10-01_2023-12-31.csv\")\nfor arquivo in arquivos:\n    print(arquivo)",
         "detail": "index",
         "documentation": {}
     }
