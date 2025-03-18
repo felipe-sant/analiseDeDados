@@ -1,15 +1,17 @@
+from utils.formatText import formatarTexto_negrito, formatarTexto_tachado
+
 def main(arquivos):
     while True:
         
         print()
-        print("Menu Principal")
+        print(formatarTexto_negrito("Menu Principal"))
         print("=="*20)
-        print("1 | Media, moda e mediana")
-        print("2 | Variancia e desvio padrão")
-        print("3 | 1º, 2º e 3º quartil")
-        print("4 | 5º e 95º percentil")
-        print("5 | Outliers")
-        print("6 | Gráfico de Boxplot")
+        print(formatarTexto_tachado("1 | Media, moda e mediana"))
+        print(formatarTexto_tachado("2 | Desvio padrão e variância"))
+        print(formatarTexto_tachado("3 | 1º, 2º e 3º quartil"))
+        print(formatarTexto_tachado("4 | 5º e 95º percentil"))
+        print(formatarTexto_tachado("5 | Outliers"))
+        print(formatarTexto_tachado("6 | Gráfico de Boxplot"))
         print("7 | Mostrar todos os dados")
         print("--"*20)
         print("0 | Sair")
