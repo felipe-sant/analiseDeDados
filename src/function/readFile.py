@@ -1,4 +1,4 @@
-from model.Temperatura import Temperatura
+from src.model.Temperatura import Temperatura
 
 def readFile(file_path) -> list:
     dados = []

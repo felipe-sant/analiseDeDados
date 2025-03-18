@@ -1,7 +1,7 @@
-from utils.formatText import formatarTexto_negrito, formatarTexto_tachado
-from function.calcModa import calcModa
-from function.calcMedia import calcMedia
-from function.calcMediana import calcMediana
+from src.utils.formatText import formatarTexto_negrito, formatarTexto_tachado
+from src.function.calcModa import calcModa
+from src.function.calcMedia import calcMedia
+from src.function.calcMediana import calcMediana
 
 def main(arquivos):
     while True:
