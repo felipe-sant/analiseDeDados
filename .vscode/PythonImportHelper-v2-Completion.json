@@ -1,10 +1,42 @@
 [
     {
+        "label": "calcVariancia",
+        "importPath": "src.function.calcVariancia",
+        "description": "src.function.calcVariancia",
+        "isExtraImport": true,
+        "detail": "src.function.calcVariancia",
+        "documentation": {}
+    },
+    {
+        "label": "calcVariancia",
+        "importPath": "src.function.calcVariancia",
+        "description": "src.function.calcVariancia",
+        "isExtraImport": true,
+        "detail": "src.function.calcVariancia",
+        "documentation": {}
+    },
+    {
         "label": "Counter",
         "importPath": "collections",
         "description": "collections",
         "isExtraImport": true,
         "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "calcMedia",
+        "importPath": "src.function.calcMedia",
+        "description": "src.function.calcMedia",
+        "isExtraImport": true,
+        "detail": "src.function.calcMedia",
+        "documentation": {}
+    },
+    {
+        "label": "calcMedia",
+        "importPath": "src.function.calcMedia",
+        "description": "src.function.calcMedia",
+        "isExtraImport": true,
+        "detail": "src.function.calcMedia",
         "documentation": {}
     },
     {
@@ -40,19 +72,27 @@
         "documentation": {}
     },
     {
-        "label": "calcMedia",
-        "importPath": "src.function.calcMedia",
-        "description": "src.function.calcMedia",
-        "isExtraImport": true,
-        "detail": "src.function.calcMedia",
-        "documentation": {}
-    },
-    {
         "label": "calcMediana",
         "importPath": "src.function.calcMediana",
         "description": "src.function.calcMediana",
         "isExtraImport": true,
         "detail": "src.function.calcMediana",
+        "documentation": {}
+    },
+    {
+        "label": "calcDesvioPadrao",
+        "importPath": "src.function.calcDesvioPadrao",
+        "description": "src.function.calcDesvioPadrao",
+        "isExtraImport": true,
+        "detail": "src.function.calcDesvioPadrao",
+        "documentation": {}
+    },
+    {
+        "label": "calcQuartil",
+        "importPath": "src.function.calcQuartil",
+        "description": "src.function.calcQuartil",
+        "isExtraImport": true,
+        "detail": "src.function.calcQuartil",
         "documentation": {}
     },
     {
@@ -69,6 +109,15 @@
         "description": "src.menu.main",
         "isExtraImport": true,
         "detail": "src.menu.main",
+        "documentation": {}
+    },
+    {
+        "label": "calcDesvioPadrao",
+        "kind": 2,
+        "importPath": "src.function.calcDesvioPadrao",
+        "description": "src.function.calcDesvioPadrao",
+        "peekOfCode": "def calcDesvioPadrao(dados) -> float:\n    return calcVariancia(dados) ** 0.5",
+        "detail": "src.function.calcDesvioPadrao",
         "documentation": {}
     },
     {
@@ -99,6 +148,24 @@
         "documentation": {}
     },
     {
+        "label": "calcQuartil",
+        "kind": 2,
+        "importPath": "src.function.calcQuartil",
+        "description": "src.function.calcQuartil",
+        "peekOfCode": "def calcQuartil(dados, Q):\n    lista_ordenada = sorted(dados, key=lambda x: x.temperatura)\n    posicao = Q * (len(lista_ordenada) + 1) / 4\n    if posicao.is_integer():\n        return lista_ordenada[int(posicao) - 1].temperatura\n    else:\n        posicao_inteira = int(posicao)\n        fracao = posicao - posicao_inteira\n        return lista_ordenada[posicao_inteira - 1].temperatura + fracao * (lista_ordenada[posicao_inteira].temperatura - lista_ordenada[posicao_inteira - 1].temperatura)",
+        "detail": "src.function.calcQuartil",
+        "documentation": {}
+    },
+    {
+        "label": "calcVariancia",
+        "kind": 2,
+        "importPath": "src.function.calcVariancia",
+        "description": "src.function.calcVariancia",
+        "peekOfCode": "def calcVariancia(dados) -> float:\n    media = calcMedia(dados)\n    soma = 0\n    for dado in dados:\n        soma += (dado.temperatura - media) ** 2\n    variancia = soma / len(dados)\n    return variancia",
+        "detail": "src.function.calcVariancia",
+        "documentation": {}
+    },
+    {
         "label": "readFile",
         "kind": 2,
         "importPath": "src.function.readFile",
@@ -112,7 +179,7 @@
         "kind": 2,
         "importPath": "src.menu.main",
         "description": "src.menu.main",
-        "peekOfCode": "def main(arquivos):\n    while True:\n        print()\n        print(formatarTexto_negrito(\"Menu Principal\"))\n        print(\"==\"*20)\n        print(\"1 | Media, moda e mediana\")\n        print(formatarTexto_tachado(\"2 | Desvio padrão e variância\"))\n        print(formatarTexto_tachado(\"3 | 1º, 2º e 3º quartil\"))\n        print(formatarTexto_tachado(\"4 | 5º e 95º percentil\"))\n        print(formatarTexto_tachado(\"5 | Outliers\"))",
+        "peekOfCode": "def main(dados):\n    while True:\n        print()\n        print(formatarTexto_negrito(\"Menu Principal\"))\n        print(\"==\"*20)\n        print(\"1 | Media, moda e mediana\")\n        print(\"2 | Desvio padrão e variância\")\n        print(\"3 | 1º, 2º e 3º quartil\")\n        print(formatarTexto_tachado(\"4 | 5º e 95º percentil\"))\n        print(formatarTexto_tachado(\"5 | Outliers\"))",
         "detail": "src.menu.main",
         "documentation": {}
     },
