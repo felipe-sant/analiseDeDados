@@ -7,6 +7,7 @@ from src.function.calcDesvioPadrao import calcDesvioPadrao
 from src.function.calcQuartil import calcQuartil
 from src.function.calcPercentil import calcPercentil
 from src.function.calcOutliers import calcOutliers
+from src.function.criarBoxplot import criarBoxplot
 
 def main(dados):
     while True:
@@ -19,7 +20,7 @@ def main(dados):
         print("3 | 1º, 2º e 3º quartil")
         print("4 | 5º e 95º percentil")
         print("5 | Outliers")
-        print(formatarTexto_tachado("6 | Gráfico de Boxplot"))
+        print("6 | Gráfico de Boxplot")
         print("7 | Mostrar todos os dados")
         print("--"*20)
         print("0 | Sair")
@@ -65,8 +66,9 @@ def main(dados):
             print()
             input("Pressione Enter para continuar...")
         elif opcao == "6":
-            print("Opção 6")
-            input("Pressione Enter para continuar...")
+            print()
+            criarBoxplot(dados)
+            print()
         elif opcao == "7":
             for dado in dados:
                 print(dado)

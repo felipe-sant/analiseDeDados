@@ -56,6 +56,15 @@
         "documentation": {}
     },
     {
+        "label": "matplotlib.pyplot",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "matplotlib.pyplot",
+        "description": "matplotlib.pyplot",
+        "detail": "matplotlib.pyplot",
+        "documentation": {}
+    },
+    {
         "label": "Temperatura",
         "importPath": "src.model.Temperatura",
         "description": "src.model.Temperatura",
@@ -205,6 +214,15 @@
         "description": "src.function.calcVariancia",
         "peekOfCode": "def calcVariancia(dados) -> float:\n    media = calcMedia(dados)\n    soma = 0\n    for dado in dados:\n        soma += (dado.temperatura - media) ** 2\n    variancia = soma / len(dados)\n    return variancia",
         "detail": "src.function.calcVariancia",
+        "documentation": {}
+    },
+    {
+        "label": "criarBoxplot",
+        "kind": 2,
+        "importPath": "src.function.criarBoxplot",
+        "description": "src.function.criarBoxplot",
+        "peekOfCode": "def criarBoxplot():\n    plt.boxplot([1, 2, 3, 4, 5])\n    plt.title(\"Boxplot\")\n    plt.ylabel('Valores')\n    plt.show()",
+        "detail": "src.function.criarBoxplot",
         "documentation": {}
     },
     {
