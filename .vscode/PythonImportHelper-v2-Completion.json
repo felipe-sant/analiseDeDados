@@ -24,6 +24,22 @@
         "documentation": {}
     },
     {
+        "label": "calcQuartil",
+        "importPath": "src.function.calcQuartil",
+        "description": "src.function.calcQuartil",
+        "isExtraImport": true,
+        "detail": "src.function.calcQuartil",
+        "documentation": {}
+    },
+    {
+        "label": "calcQuartil",
+        "importPath": "src.function.calcQuartil",
+        "description": "src.function.calcQuartil",
+        "isExtraImport": true,
+        "detail": "src.function.calcQuartil",
+        "documentation": {}
+    },
+    {
         "label": "calcMedia",
         "importPath": "src.function.calcMedia",
         "description": "src.function.calcMedia",
@@ -88,19 +104,19 @@
         "documentation": {}
     },
     {
-        "label": "calcQuartil",
-        "importPath": "src.function.calcQuartil",
-        "description": "src.function.calcQuartil",
-        "isExtraImport": true,
-        "detail": "src.function.calcQuartil",
-        "documentation": {}
-    },
-    {
         "label": "calcPercentil",
         "importPath": "src.function.calcPercentil",
         "description": "src.function.calcPercentil",
         "isExtraImport": true,
         "detail": "src.function.calcPercentil",
+        "documentation": {}
+    },
+    {
+        "label": "calcOutliers",
+        "importPath": "src.function.calcOutliers",
+        "description": "src.function.calcOutliers",
+        "isExtraImport": true,
+        "detail": "src.function.calcOutliers",
         "documentation": {}
     },
     {
@@ -156,6 +172,15 @@
         "documentation": {}
     },
     {
+        "label": "calcOutliers",
+        "kind": 2,
+        "importPath": "src.function.calcOutliers",
+        "description": "src.function.calcOutliers",
+        "peekOfCode": "def calcOutliers(dados) -> list:\n    Q1 = calcQuartil(dados, 1)\n    Q3 = calcQuartil(dados, 3)\n    IQR = Q3 - Q1\n    limiteInferior = Q1 - 1.5 * IQR\n    limiteSuperior = Q3 + 1.5 * IQR\n    outliers = []\n    for dado in dados:\n        if dado.temperatura < limiteInferior or dado.temperatura > limiteSuperior:\n            outliers.append(dado)",
+        "detail": "src.function.calcOutliers",
+        "documentation": {}
+    },
+    {
         "label": "calcPercentil",
         "kind": 2,
         "importPath": "src.function.calcPercentil",
@@ -196,7 +221,7 @@
         "kind": 2,
         "importPath": "src.menu.main",
         "description": "src.menu.main",
-        "peekOfCode": "def main(dados):\n    while True:\n        print()\n        print(formatarTexto_negrito(\"Menu Principal\"))\n        print(\"==\"*20)\n        print(\"1 | Media, moda e mediana\")\n        print(\"2 | Desvio padrão e variância\")\n        print(\"3 | 1º, 2º e 3º quartil\")\n        print(\"4 | 5º e 95º percentil\")\n        print(formatarTexto_tachado(\"5 | Outliers\"))",
+        "peekOfCode": "def main(dados):\n    while True:\n        print()\n        print(formatarTexto_negrito(\"Menu Principal\"))\n        print(\"==\"*20)\n        print(\"1 | Media, moda e mediana\")\n        print(\"2 | Desvio padrão e variância\")\n        print(\"3 | 1º, 2º e 3º quartil\")\n        print(\"4 | 5º e 95º percentil\")\n        print(\"5 | Outliers\")",
         "detail": "src.menu.main",
         "documentation": {}
     },
