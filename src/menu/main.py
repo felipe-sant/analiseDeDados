@@ -5,6 +5,7 @@ from src.function.calcMediana import calcMediana
 from src.function.calcVariancia import calcVariancia
 from src.function.calcDesvioPadrao import calcDesvioPadrao
 from src.function.calcQuartil import calcQuartil
+from src.function.calcPercentil import calcPercentil
 
 def main(dados):
     while True:
@@ -15,7 +16,7 @@ def main(dados):
         print("1 | Media, moda e mediana")
         print("2 | Desvio padrão e variância")
         print("3 | 1º, 2º e 3º quartil")
-        print(formatarTexto_tachado("4 | 5º e 95º percentil"))
+        print("4 | 5º e 95º percentil")
         print(formatarTexto_tachado("5 | Outliers"))
         print(formatarTexto_tachado("6 | Gráfico de Boxplot"))
         print("7 | Mostrar todos os dados")
@@ -47,7 +48,10 @@ def main(dados):
             print()
             input("Pressione Enter para continuar...")
         elif opcao == "4":
-            print("Opção 4")
+            print()
+            print("3º Percentil:", calcPercentil(dados, 3))
+            print("95º Percentil:", calcPercentil(dados, 95))
+            print()
             input("Pressione Enter para continuar...")
         elif opcao == "5":
             print("Opção 5")

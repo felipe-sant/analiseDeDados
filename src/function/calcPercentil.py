@@ -1,6 +1,6 @@
-def calcQuartil(dados, quartil):
+def calcPercentil(dados, percentil):
     lista_ordenada = sorted(dados, key=lambda x: x.temperatura)
-    posicao = quartil * (len(lista_ordenada) + 1) / 4
+    posicao = percentil * (len(lista_ordenada) + 1) / 100
     if posicao.is_integer():
         return lista_ordenada[int(posicao) - 1].temperatura
     else:

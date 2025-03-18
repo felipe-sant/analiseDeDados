@@ -96,6 +96,14 @@
         "documentation": {}
     },
     {
+        "label": "calcPercentil",
+        "importPath": "src.function.calcPercentil",
+        "description": "src.function.calcPercentil",
+        "isExtraImport": true,
+        "detail": "src.function.calcPercentil",
+        "documentation": {}
+    },
+    {
         "label": "readFile",
         "importPath": "src.function.readFile",
         "description": "src.function.readFile",
@@ -148,11 +156,20 @@
         "documentation": {}
     },
     {
+        "label": "calcPercentil",
+        "kind": 2,
+        "importPath": "src.function.calcPercentil",
+        "description": "src.function.calcPercentil",
+        "peekOfCode": "def calcPercentil(dados, percentil):\n    lista_ordenada = sorted(dados, key=lambda x: x.temperatura)\n    posicao = percentil * (len(lista_ordenada) + 1) / 100\n    if posicao.is_integer():\n        return lista_ordenada[int(posicao) - 1].temperatura\n    else:\n        posicao_inteira = int(posicao)\n        fracao = posicao - posicao_inteira\n        return lista_ordenada[posicao_inteira - 1].temperatura + fracao * (lista_ordenada[posicao_inteira].temperatura - lista_ordenada[posicao_inteira - 1].temperatura)",
+        "detail": "src.function.calcPercentil",
+        "documentation": {}
+    },
+    {
         "label": "calcQuartil",
         "kind": 2,
         "importPath": "src.function.calcQuartil",
         "description": "src.function.calcQuartil",
-        "peekOfCode": "def calcQuartil(dados, Q):\n    lista_ordenada = sorted(dados, key=lambda x: x.temperatura)\n    posicao = Q * (len(lista_ordenada) + 1) / 4\n    if posicao.is_integer():\n        return lista_ordenada[int(posicao) - 1].temperatura\n    else:\n        posicao_inteira = int(posicao)\n        fracao = posicao - posicao_inteira\n        return lista_ordenada[posicao_inteira - 1].temperatura + fracao * (lista_ordenada[posicao_inteira].temperatura - lista_ordenada[posicao_inteira - 1].temperatura)",
+        "peekOfCode": "def calcQuartil(dados, quartil):\n    lista_ordenada = sorted(dados, key=lambda x: x.temperatura)\n    posicao = quartil * (len(lista_ordenada) + 1) / 4\n    if posicao.is_integer():\n        return lista_ordenada[int(posicao) - 1].temperatura\n    else:\n        posicao_inteira = int(posicao)\n        fracao = posicao - posicao_inteira\n        return lista_ordenada[posicao_inteira - 1].temperatura + fracao * (lista_ordenada[posicao_inteira].temperatura - lista_ordenada[posicao_inteira - 1].temperatura)",
         "detail": "src.function.calcQuartil",
         "documentation": {}
     },
@@ -179,7 +196,7 @@
         "kind": 2,
         "importPath": "src.menu.main",
         "description": "src.menu.main",
-        "peekOfCode": "def main(dados):\n    while True:\n        print()\n        print(formatarTexto_negrito(\"Menu Principal\"))\n        print(\"==\"*20)\n        print(\"1 | Media, moda e mediana\")\n        print(\"2 | Desvio padrão e variância\")\n        print(\"3 | 1º, 2º e 3º quartil\")\n        print(formatarTexto_tachado(\"4 | 5º e 95º percentil\"))\n        print(formatarTexto_tachado(\"5 | Outliers\"))",
+        "peekOfCode": "def main(dados):\n    while True:\n        print()\n        print(formatarTexto_negrito(\"Menu Principal\"))\n        print(\"==\"*20)\n        print(\"1 | Media, moda e mediana\")\n        print(\"2 | Desvio padrão e variância\")\n        print(\"3 | 1º, 2º e 3º quartil\")\n        print(\"4 | 5º e 95º percentil\")\n        print(formatarTexto_tachado(\"5 | Outliers\"))",
         "detail": "src.menu.main",
         "documentation": {}
     },
