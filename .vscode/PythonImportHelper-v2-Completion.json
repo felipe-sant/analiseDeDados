@@ -16,12 +16,29 @@
         "documentation": {}
     },
     {
+        "label": "main",
+        "importPath": "menu.main",
+        "description": "menu.main",
+        "isExtraImport": true,
+        "detail": "menu.main",
+        "documentation": {}
+    },
+    {
         "label": "readFile",
         "kind": 2,
         "importPath": "function.readFile",
         "description": "function.readFile",
         "peekOfCode": "def readFile(file_path) -> list:\n    dados = []\n    with open(file_path, 'r') as file:\n        arquivo = file.read().split(\"\\n\")\n        for linha in arquivo[1:-2]:\n            dado = linha.split(\";\")\n            obj = Temperatura(dado[0], dado[1])\n            dados.append(obj)\n    return dados",
         "detail": "function.readFile",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "menu.main",
+        "description": "menu.main",
+        "peekOfCode": "def main(arquivos):\n    while True:\n        print()\n        print(\"Menu Principal\")\n        print(\"==\"*20)\n        print(\"1 | Media, moda e mediana\")\n        print(\"2 | Variancia e desvio padrão\")\n        print(\"3 | 1º, 2º e 3º quartil\")\n        print(\"4 | 5º e 95º percentil\")\n        print(\"5 | Outliers\")",
+        "detail": "menu.main",
         "documentation": {}
     },
     {
@@ -38,7 +55,7 @@
         "kind": 5,
         "importPath": "index",
         "description": "index",
-        "peekOfCode": "arquivos = readFile(\"data/dados_A618_D_2022-10-01_2023-12-31.csv\")\nfor arquivo in arquivos:\n    print(arquivo)",
+        "peekOfCode": "arquivos = readFile(\"data/dados_A618_D_2022-10-01_2023-12-31.csv\")\nmain(arquivos)",
         "detail": "index",
         "documentation": {}
     }
