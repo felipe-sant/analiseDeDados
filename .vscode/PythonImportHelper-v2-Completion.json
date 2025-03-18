@@ -1,5 +1,13 @@
 [
     {
+        "label": "Counter",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
         "label": "Temperatura",
         "importPath": "model.Temperatura",
         "description": "model.Temperatura",
@@ -24,6 +32,30 @@
         "documentation": {}
     },
     {
+        "label": "calcModa",
+        "importPath": "function.calcModa",
+        "description": "function.calcModa",
+        "isExtraImport": true,
+        "detail": "function.calcModa",
+        "documentation": {}
+    },
+    {
+        "label": "calcMedia",
+        "importPath": "function.calcMedia",
+        "description": "function.calcMedia",
+        "isExtraImport": true,
+        "detail": "function.calcMedia",
+        "documentation": {}
+    },
+    {
+        "label": "calcMediana",
+        "importPath": "function.calcMediana",
+        "description": "function.calcMediana",
+        "isExtraImport": true,
+        "detail": "function.calcMediana",
+        "documentation": {}
+    },
+    {
         "label": "readFile",
         "importPath": "function.readFile",
         "description": "function.readFile",
@@ -40,11 +72,38 @@
         "documentation": {}
     },
     {
+        "label": "calcMedia",
+        "kind": 2,
+        "importPath": "function.calcMedia",
+        "description": "function.calcMedia",
+        "peekOfCode": "def calcMedia(dados) -> float:\n    total = 0\n    for dado in dados:\n        total += dado.temperatura\n    return total / len(dados)",
+        "detail": "function.calcMedia",
+        "documentation": {}
+    },
+    {
+        "label": "calcMediana",
+        "kind": 2,
+        "importPath": "function.calcMediana",
+        "description": "function.calcMediana",
+        "peekOfCode": "def calcMediana(dados):\n    lista_ordenada = sorted(dados, key=lambda x: x.temperatura)\n    n = len(lista_ordenada)\n    medio = n // 2\n    if n % 2 == 0:\n        return lista_ordenada[medio - 1].temperatura + lista_ordenada[medio].temperatura / 2\n    else:\n        return lista_ordenada[medio].temperatura",
+        "detail": "function.calcMediana",
+        "documentation": {}
+    },
+    {
+        "label": "calcModa",
+        "kind": 2,
+        "importPath": "function.calcModa",
+        "description": "function.calcModa",
+        "peekOfCode": "def calcModa(dados) -> float:\n    contagem = Counter(dados.temperatura for dados in dados)\n    moda = [k for k, v in contagem.items() if v == contagem.most_common(1)[0][1]]\n    return moda[0] if moda else None",
+        "detail": "function.calcModa",
+        "documentation": {}
+    },
+    {
         "label": "readFile",
         "kind": 2,
         "importPath": "function.readFile",
         "description": "function.readFile",
-        "peekOfCode": "def readFile(file_path) -> list:\n    dados = []\n    with open(file_path, 'r') as file:\n        arquivo = file.read().split(\"\\n\")\n        for linha in arquivo[1:-2]:\n            dado = linha.split(\";\")\n            obj = Temperatura(dado[0], dado[1])\n            dados.append(obj)\n    return dados",
+        "peekOfCode": "def readFile(file_path) -> list:\n    dados = []\n    with open(file_path, 'r') as file:\n        arquivo = file.read().split(\"\\n\")\n        for linha in arquivo[1:-2]:\n            dado = linha.split(\";\")\n            obj = Temperatura(dado[0], float(dado[1].replace(\",\", \".\")))\n            dados.append(obj)\n    return dados",
         "detail": "function.readFile",
         "documentation": {}
     },
@@ -53,7 +112,7 @@
         "kind": 2,
         "importPath": "menu.main",
         "description": "menu.main",
-        "peekOfCode": "def main(arquivos):\n    while True:\n        print()\n        print(formatarTexto_negrito(\"Menu Principal\"))\n        print(\"==\"*20)\n        print(formatarTexto_tachado(\"1 | Media, moda e mediana\"))\n        print(formatarTexto_tachado(\"2 | Desvio padrão e variância\"))\n        print(formatarTexto_tachado(\"3 | 1º, 2º e 3º quartil\"))\n        print(formatarTexto_tachado(\"4 | 5º e 95º percentil\"))\n        print(formatarTexto_tachado(\"5 | Outliers\"))",
+        "peekOfCode": "def main(arquivos):\n    while True:\n        print()\n        print(formatarTexto_negrito(\"Menu Principal\"))\n        print(\"==\"*20)\n        print(\"1 | Media, moda e mediana\")\n        print(formatarTexto_tachado(\"2 | Desvio padrão e variância\"))\n        print(formatarTexto_tachado(\"3 | 1º, 2º e 3º quartil\"))\n        print(formatarTexto_tachado(\"4 | 5º e 95º percentil\"))\n        print(formatarTexto_tachado(\"5 | Outliers\"))",
         "detail": "menu.main",
         "documentation": {}
     },

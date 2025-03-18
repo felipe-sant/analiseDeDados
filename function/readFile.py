@@ -7,7 +7,7 @@ def readFile(file_path) -> list:
         arquivo = file.read().split("\n")
         for linha in arquivo[1:-2]:
             dado = linha.split(";")
-            obj = Temperatura(dado[0], dado[1])
+            obj = Temperatura(dado[0], float(dado[1].replace(",", ".")))
             dados.append(obj)
     
     return dados

@@ -1,4 +1,7 @@
 from utils.formatText import formatarTexto_negrito, formatarTexto_tachado
+from function.calcModa import calcModa
+from function.calcMedia import calcMedia
+from function.calcMediana import calcMediana
 
 def main(arquivos):
     while True:
@@ -6,7 +9,7 @@ def main(arquivos):
         print()
         print(formatarTexto_negrito("Menu Principal"))
         print("=="*20)
-        print(formatarTexto_tachado("1 | Media, moda e mediana"))
+        print("1 | Media, moda e mediana")
         print(formatarTexto_tachado("2 | Desvio padrão e variância"))
         print(formatarTexto_tachado("3 | 1º, 2º e 3º quartil"))
         print(formatarTexto_tachado("4 | 5º e 95º percentil"))
@@ -21,7 +24,11 @@ def main(arquivos):
         opcao = input("Digite a opção desejada: ")
         
         if opcao == "1":
-            print("Opção 1")
+            print()
+            print("Moda:", calcModa(arquivos))
+            print("Média:", calcMedia(arquivos))	
+            print("Mediana:", calcMediana(arquivos))
+            print()
             input("Pressione Enter para continuar...")
         elif opcao == "2":
             print("Opção 2")
