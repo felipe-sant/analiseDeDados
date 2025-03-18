@@ -1,0 +1,28 @@
+[
+    {
+        "label": "readFile",
+        "importPath": "function.readFile",
+        "description": "function.readFile",
+        "isExtraImport": true,
+        "detail": "function.readFile",
+        "documentation": {}
+    },
+    {
+        "label": "readFile",
+        "kind": 2,
+        "importPath": "function.readFile",
+        "description": "function.readFile",
+        "peekOfCode": "def readFile(file_path):\n    dados = []\n    with open(file_path, 'r') as file:\n        arquivo = file.read().split(\"\\n\")\n        for linha in arquivo[1:-2]:\n            dado = linha.split(\";\")\n            dado = dado[0:-1]\n            dados.append(dado)\n    return dados",
+        "detail": "function.readFile",
+        "documentation": {}
+    },
+    {
+        "label": "arquivo",
+        "kind": 5,
+        "importPath": "index",
+        "description": "index",
+        "peekOfCode": "arquivo = readFile('data/dados_A618_D_2022-10-01_2023-12-31.csv')\nprint(arquivo)",
+        "detail": "index",
+        "documentation": {}
+    }
+]
