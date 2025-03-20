@@ -255,7 +255,7 @@
         "kind": 2,
         "importPath": "src.function.readFile",
         "description": "src.function.readFile",
-        "peekOfCode": "def readFile(file_path) -> list:\n    dados = []\n    with open(file_path, 'r') as file:\n        arquivo = file.read().split(\"\\n\")\n        for linha in arquivo[1:-2]:\n            dado = linha.split(\";\")\n            obj = Temperatura(dado[0], float(dado[1].replace(\",\", \".\")))\n            dados.append(obj)\n    return dados",
+        "peekOfCode": "def readFile(file_path) -> list:\n    dados = []\n    with open(file_path, 'r') as file:\n        arquivo = file.read().split(\"\\n\")\n        for linha in arquivo[1:-2]:\n            dado = linha.split(\";\")\n            obj = Temperatura(dado[0], int(float(dado[1].replace(\",\", \".\"))))\n            dados.append(obj)\n    return dados",
         "detail": "src.function.readFile",
         "documentation": {}
     },
