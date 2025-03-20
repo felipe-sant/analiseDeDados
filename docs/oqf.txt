@@ -1,0 +1,13 @@
+Prezados, considerem o arquivo cvs postado com temperaturas diárias de uma determinada região. 
+A tarefa é a seguinte:
+Mesmo que a temperatura seja um dado contínuo, considere que os dados sejam discretos, ou seja, considere somente a parte inteira da temperatura. Baseados na aula 2, disponível na pasta do canal Geral, fazer um script, preferencialmente em R ou Python, que responda as seguintes questões:
+
+1 - Qual a média, moda e mediana dos dados?
+2 - Qual a variância e o desvio padrão dos dados?
+3 - Calcule os 1º, 2º e 3º quartis dos dados
+4 - Calcule o percentil 5 e 95 dos dados
+5 - Calcular os outliers (se houver) dos dados
+6 - Faça um relatório com todos esses dados e
+	a. Grafique o Box Plot e explique o que ele tem a dizer
+	b. Explique o que significam os valores encontrados nos itens de 1 a 6
+7 - Envie o script e o relatório nessa tarefa.

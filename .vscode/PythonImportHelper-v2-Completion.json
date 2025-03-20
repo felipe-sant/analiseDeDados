@@ -129,6 +129,31 @@
         "documentation": {}
     },
     {
+        "label": "criarBoxplot",
+        "importPath": "src.function.criarBoxplot",
+        "description": "src.function.criarBoxplot",
+        "isExtraImport": true,
+        "detail": "src.function.criarBoxplot",
+        "documentation": {}
+    },
+    {
+        "label": "limparTerminal",
+        "importPath": "src.utils.limparTerminal",
+        "description": "src.utils.limparTerminal",
+        "isExtraImport": true,
+        "detail": "src.utils.limparTerminal",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
         "label": "readFile",
         "importPath": "src.function.readFile",
         "description": "src.function.readFile",
@@ -221,7 +246,7 @@
         "kind": 2,
         "importPath": "src.function.criarBoxplot",
         "description": "src.function.criarBoxplot",
-        "peekOfCode": "def criarBoxplot():\n    plt.boxplot([1, 2, 3, 4, 5])\n    plt.title(\"Boxplot\")\n    plt.ylabel('Valores')\n    plt.show()",
+        "peekOfCode": "def criarBoxplot(dados):\n    boxplotDados = []\n    for dado in dados:\n        boxplotDados.append(dado.temperatura)\n    plt.boxplot(boxplotDados)\n    plt.title(\"Temperatura\")\n    plt.ylabel('Valores')\n    plt.show()",
         "detail": "src.function.criarBoxplot",
         "documentation": {}
     },
@@ -239,7 +264,7 @@
         "kind": 2,
         "importPath": "src.menu.main",
         "description": "src.menu.main",
-        "peekOfCode": "def main(dados):\n    while True:\n        print()\n        print(formatarTexto_negrito(\"Menu Principal\"))\n        print(\"==\"*20)\n        print(\"1 | Media, moda e mediana\")\n        print(\"2 | Desvio padrão e variância\")\n        print(\"3 | 1º, 2º e 3º quartil\")\n        print(\"4 | 5º e 95º percentil\")\n        print(\"5 | Outliers\")",
+        "peekOfCode": "def main(dados):\n    while True:\n        limparTerminal()\n        print()\n        print(formatarTexto_negrito(\"Menu Principal\"))\n        print(\"==\"*20)\n        print(\"1 | Media, moda e mediana\")\n        print(\"2 | Desvio padrão e variância\")\n        print(\"3 | 1º, 2º e 3º quartil\")\n        print(\"4 | 5º e 95º percentil\")",
         "detail": "src.menu.main",
         "documentation": {}
     },
@@ -1006,6 +1031,15 @@
         "description": "src.utils.formatText",
         "peekOfCode": "def formatarTexto_tachado_fundoPreto(texto):\n    return f\"\\033[9;40m{texto}\\033[0m\"\n# Path: src/utils/formatarTexto.py",
         "detail": "src.utils.formatText",
+        "documentation": {}
+    },
+    {
+        "label": "limparTerminal",
+        "kind": 2,
+        "importPath": "src.utils.limparTerminal",
+        "description": "src.utils.limparTerminal",
+        "peekOfCode": "def limparTerminal():\n    os.system('cls' if os.name == 'nt' else 'clear')\n# Path src/utils/limparTerminal.py",
+        "detail": "src.utils.limparTerminal",
         "documentation": {}
     },
     {

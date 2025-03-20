@@ -8,9 +8,12 @@ from src.function.calcQuartil import calcQuartil
 from src.function.calcPercentil import calcPercentil
 from src.function.calcOutliers import calcOutliers
 from src.function.criarBoxplot import criarBoxplot
+from src.utils.limparTerminal import limparTerminal
 
 def main(dados):
     while True:
+        
+        limparTerminal()
         
         print()
         print(formatarTexto_negrito("Menu Principal"))
